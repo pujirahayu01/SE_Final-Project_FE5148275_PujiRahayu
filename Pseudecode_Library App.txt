@@ -1,0 +1,68 @@
+# PEMINJAMAN DAN PENGEMBALIAN BUKU LIBRARY APP
+begin
+    READ AND WRITE "Library APP"
+    Display "Halaman Login"
+    IF "sudah punya akun is TRUE"
+        READ AND WRITE "Username" with String
+        READ AND WRITE "Password" with String
+        READ AND WRITE "Login Button"
+            IF "Username && Password is TRUE"
+                Display "Dashboard Fitur"
+            ELSE 
+                Return READ AND WRITE "Username" with String or Back to step 6
+    ELSE
+        Display "Form Register"
+        READ AND WRITE "Username" with String
+        READ AND WRITE "NIK" with Integer
+        READ AND WRITE "Password" with String
+        READ AND WRITE "No HP" with Integer
+        READ AND WRITE "Alamat" with String
+        READ AND WRITE "Register Button"
+        Display "Dashboard Fitur"
+    
+    IF "Cari Buku is TRUE"
+        READ AND WRITE "Fitur Buku"=
+        Display "List Buku"
+        READ AND WRITE "Pilih Buku yang di inginkan"
+        Display "Detail Buku"
+
+            IF "Akan Meminjam Buku is TRUE"
+                Display "Halaman peminjaman buku"
+                Akses Database User/ peminjam
+                Display "Data diri peminjam, kode buku, judul buku, dan tanggal pinjam, dan tanggal pengembalian"
+                READ AND WRITE "Check Data peminjaman"
+                READ AND WRITE "Button Pinjam" 
+                Display "Bukti Peminjaman buku"
+                Display "Pop Up Berhasil melakukan peminjaman BUKU"
+            ELSE
+               Return READ AND WRITE "Fitur Buku" or Back to step 24
+    ELSE
+        READ AND WRITE "Fitur pengembalian Buku"
+        Display "Status Peminjaman"
+        READ AND WRITE "Status Peminjaman"
+        Display "Bukti peminjaman buku"
+        READ AND WRITE "Tanggal_pengembalian" With Date
+        READ AND WRITE "Button pengembalian"
+            IF "Tanggal_pengembalian > Tanggalkembali  is TRUE"
+                calculate Denda in Rupiah
+                Display "Jumlah Denda"
+                READ AND WRITE "button bayar"
+            ELSE
+                Display "Pop Up Berhasil melakukan pengembalian buku"
+                Display "Pop Up Berhasil melakukan pengembalian buku"
+DONE
+
+
+
+
+    
+    
+    
+    
+    
+
+
+
+
+
+
